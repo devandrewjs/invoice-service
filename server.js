@@ -20,10 +20,7 @@ if (cluster.isMaster) {
 	app.use(express.static(__dirname + '/public'));
 	app.use(body_parser.json());
 	app.use(body_parser.urlencoded({extended:true})); 
-	// app.use(function(req,res,next){
-	// 	console.log('request handled by '+process.pid);
-	// 	next();
-	// })
+
 	app.use('/api/auth',auth);
 	app.use('/api/admin', admin);
 	app.use('/api/user', user);
